@@ -1,101 +1,77 @@
 :root {
-    --primary: #8e44ad;
-    --bg: #0f0f0f;
-    --card-bg: #1e1e1e;
+    --primary: #00d4ff; /* Azul espacial */
+    --secondary: #9b59b6; /* Roxo */
+    --bg: #050505;
+    --card-bg: #111;
     --text: #ffffff;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
 header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: rgba(0,0,0,0.8);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 20px 5%;
+    background: linear-gradient(135deg, #111, #222);
+    border-bottom: 2px solid var(--primary);
 }
 
-.logo h1 span { color: var(--primary); }
+.logo h1 { margin: 0; font-size: 1.5rem; }
+.logo h1 span { color: var(--primary); text-transform: uppercase; }
 
 #searchBar {
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    background: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--primary);
+    background: #000;
     color: white;
-    width: 250px;
+    outline: none;
 }
 
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 15px;
-    padding: 20px 5%;
+    padding: 30px 5%;
 }
 
 .game-card {
     background: var(--card-bg);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: 0.3s;
     cursor: pointer;
-    border: 2px solid transparent;
+    position: relative;
 }
 
 .game-card:hover {
-    transform: scale(1.05);
-    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--primary);
 }
 
 .game-card img {
     width: 100%;
+    display: block;
     aspect-ratio: 1/1;
     object-fit: cover;
 }
 
-.game-card p {
-    padding: 8px;
-    font-size: 0.9rem;
+.game-info {
+    padding: 10px;
+    background: rgba(0,0,0,0.8);
+    font-size: 0.85rem;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-/* Modal do Jogo */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95);
-}
-
-.modal-content {
-    width: 90%;
-    max-width: 1000px;
-    margin: 2% auto;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    right: -30px; top: -30px;
-    color: white; font-size: 40px; cursor: pointer;
-}
-
-#game-container iframe {
-    width: 100%;
-    height: 80vh;
-    border: none;
-    border-radius: 10px;
-}
+/* Estilo do Modal (Mesmo do anterior) */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: #000; }
+.modal-content { width: 100%; height: 100%; display: flex; flex-direction: column; }
+.close-btn { color: white; font-size: 40px; cursor: pointer; padding: 10px; align-self: flex-end; }
+#game-container iframe { width: 100%; height: 100%; border: none; }
