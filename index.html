@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universo dos Jogos | Milhares de Jogos Grátis</title>
     <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <script async 
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5775678596507244" 
+      crossorigin="anonymous"></script>
+    
+    <script>
+      window.adsbygoogle = window.adsbygoogle || [];
+      const adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+    </script>
 </head>
 <body>
 
@@ -13,20 +21,20 @@
         <div class="logo">
             <h1>Universo <span>dos Jogos</span></h1>
         </div>
-        <nav>
-            <input type="text" id="searchBar" placeholder="Buscar jogo...">
-        </nav>
+        <div class="search-box">
+            <input type="text" id="searchBar" placeholder="Buscar jogo no Universo...">
+        </div>
     </header>
 
     <main>
         <div id="game-grid" class="game-grid">
-            <div class="loader">Carregando diversão...</div>
+            <div class="loader">Carregando o Universo de diversão...</div>
         </div>
     </main>
 
     <div id="game-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" id="closeModal">&times;</span>
             <div id="game-container"></div>
         </div>
     </div>
